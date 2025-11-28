@@ -64,19 +64,8 @@
           name="ruleContent"
           :required="true"
         >
-          <div class="code-editor-wrapper">
-            <CodeEditor
-              v-model:modelValue="formData.ruleContent"
-              language="drools"
-              :height="400"
-              :readonly="readonly"
-              :show-toolbar="!readonly"
-              @save="handleCodeSave"
-              @validate="handleCodeValidate"
-            />
-          </div>
-          
-          <!-- 语法提示 -->
+
+             <!-- 语法提示 -->
           <div class="syntax-help" v-if="!readonly">
             <a-typography-title :level="5">语法提示：</a-typography-title>
             <a-typography-paragraph>
@@ -90,6 +79,19 @@
               </ul>
             </a-typography-paragraph>
           </div>
+
+          <div class="code-editor-wrapper">
+            <CodeEditor
+              v-model:modelValue="formData.ruleContent"
+              language="drools"
+              :height="400"
+              :readonly="readonly"
+              :show-toolbar="!readonly"
+              @save="handleCodeSave"
+              @validate="handleCodeValidate"
+            />
+          </div>
+          
         </a-form-item>
       </a-card>
 

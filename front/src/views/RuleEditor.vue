@@ -63,19 +63,9 @@
           name="ruleContent"
           :required="true"
         >
-          <div class="code-editor-wrapper">
-            <MonacoCodeEditor
-              v-model="formData.ruleContent"
-              language="drools"
-              :height="400"
-              :readonly="readonly"
-              :show-toolbar="!readonly"
-              @save="handleCodeSave"
-            />
-          </div>
-          
+
           <!-- 语法提示 -->
-          <div class="syntax-help" v-if="!readonly">
+          <div class="syntax-help" style="margin-bottom: 16px;" v-if="!readonly">
             <a-typography-title :level="5">语法提示：</a-typography-title>
             <a-typography-paragraph>
               <ul>
@@ -87,6 +77,17 @@
                 <li><code>salience</code> - 规则优先级</li>
               </ul>
             </a-typography-paragraph>
+          </div>
+
+          <div class="code-editor-wrapper">
+            <MonacoCodeEditor
+              v-model="formData.ruleContent"
+              language="drools"
+              :height="400"
+              :readonly="readonly"
+              :show-toolbar="!readonly"
+              @save="handleCodeSave"
+            />
           </div>
         </a-form-item>
       </a-card>

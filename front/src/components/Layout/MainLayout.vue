@@ -31,10 +31,7 @@
         <slot />
       </div>
     </a-layout-content>
-    
-    <a-layout-footer class="footer">
-      Drools Dynamic Rules Management System ©2024
-    </a-layout-footer>
+  
   </a-layout>
 </template>
 
